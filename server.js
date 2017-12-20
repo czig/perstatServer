@@ -13,8 +13,16 @@ var cors        = require('cors')
 
 // load data
 var contents = fs.readFileSync("PS_OFF.js")
-var data = JSON.parse(contents)
-var arrayData = data.Data
+var dataOFF = JSON.parse(contents)
+var arrayDataOFF = dataOFF.data
+
+var contents = fs.readFileSync("PS_ENL.js")
+var dataENL = JSON.parse(contents)
+var arrayDataENL = dataENL.data
+
+var contents = fs.readFileSync("PS_ALL.js")
+var dataALL = JSON.parse(contents)
+var arrayDataALL = dataALL.data
 
 // =======================
 // configuration =========
@@ -64,7 +72,7 @@ apiRoutes.get('/admanning', (req, res)=>{
     setTimeout(function() {
         res.json( {
             success: true,
-            data: arrayData 
+            Data: arrayDataALL 
         } )
     },2000)
 })
@@ -73,7 +81,41 @@ apiRoutes.get('/admanning', (req, res)=>{
 apiRoutes.post('/adManning_post', (req, res)=>{
     res.json( {
         success: true,
-        data: arrayData
+        data: arrayDataALL
+    } )
+})
+
+apiRoutes.get('/officer', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            Data: arrayDataOFF
+        } )
+    },2000)
+})
+
+//API endpoint for officers submitting ranked billets
+apiRoutes.post('/officer_post', (req, res)=>{
+    res.json( {
+        success: true,
+        data: arrayDataOFF
+    } )
+})
+
+apiRoutes.get('/enlisted', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            Data: arrayDataENL 
+        } )
+    },2000)
+})
+
+//API endpoint for officers submitting ranked billets
+apiRoutes.post('/enlisted_post', (req, res)=>{
+    res.json( {
+        success: true,
+        data: arrayDataENL
     } )
 })
 
