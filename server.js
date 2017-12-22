@@ -12,7 +12,7 @@ var morgan      = require('morgan')
 var cors        = require('cors')
 
 // load data
-var contents = fs.readFileSync("PS_OFF.js")
+var contents = fs.readFileSync("PS_OFF_MPF.js")
 var dataOFF = JSON.parse(contents)
 var arrayDataOFF = dataOFF.data
 
@@ -72,9 +72,9 @@ apiRoutes.get('/admanning', (req, res)=>{
     setTimeout(function() {
         res.json( {
             success: true,
-            Data: arrayDataALL 
+            data: arrayDataALL 
         } )
-    },2000)
+    },1000)
 })
 
 //API endpoint for officers submitting ranked billets
@@ -89,7 +89,7 @@ apiRoutes.get('/officer', (req, res)=>{
     setTimeout(function() {
         res.json( {
             success: true,
-            Data: arrayDataOFF
+            data: arrayDataOFF
         } )
     },2000)
 })
@@ -103,12 +103,10 @@ apiRoutes.post('/officer_post', (req, res)=>{
 })
 
 apiRoutes.get('/enlisted', (req, res)=>{
-    setTimeout(function() {
         res.json( {
             success: true,
-            Data: arrayDataENL 
+            data: arrayDataENL 
         } )
-    },2000)
 })
 
 //API endpoint for officers submitting ranked billets
