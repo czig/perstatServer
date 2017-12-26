@@ -12,15 +12,15 @@ var morgan      = require('morgan')
 var cors        = require('cors')
 
 // load data
-var contents = fs.readFileSync("PS_OFF_MPF.js")
+var contents = fs.readFileSync("PS_OFF_FMT.js")
 var dataOFF = JSON.parse(contents)
 var arrayDataOFF = dataOFF.data
 
-var contents = fs.readFileSync("PS_ENL.js")
+var contents = fs.readFileSync("PS_ENL_FMT.js")
 var dataENL = JSON.parse(contents)
 var arrayDataENL = dataENL.data
 
-var contents = fs.readFileSync("PS_ALL.js")
+var contents = fs.readFileSync("PS_ALL_FMT.js")
 var dataALL = JSON.parse(contents)
 var arrayDataALL = dataALL.data
 
