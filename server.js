@@ -16,6 +16,10 @@ var contents = fs.readFileSync("PS_OFF_FMT.js")
 var dataOFF = JSON.parse(contents)
 var arrayDataOFF = dataOFF.data
 
+var contents = fs.readFileSync("ps_off_promo.json")
+var dataOffPromo = JSON.parse(contents)
+var arrayDataOffPromo = dataOffPromo.data
+
 var contents = fs.readFileSync("PS_ENL_FMT.js")
 var dataENL = JSON.parse(contents)
 var arrayDataENL = dataENL.data
@@ -94,11 +98,19 @@ apiRoutes.get('/officer', (req, res)=>{
     },2000)
 })
 
-//API endpoint for officers submitting ranked billets
+//API endpoint for officer manning 
 apiRoutes.post('/officer_post', (req, res)=>{
     res.json( {
         success: true,
         data: arrayDataOFF
+    } )
+})
+
+//API endpoint for officer promotions
+apiRoutes.post('/officer_promo', (req, res)=>{
+    res.json( {
+        success: true,
+        data: arrayDataOffPromo
     } )
 })
 
