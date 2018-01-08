@@ -28,6 +28,10 @@ var contents = fs.readFileSync("PS_ALL_FMT.js")
 var dataALL = JSON.parse(contents)
 var arrayDataALL = dataALL.data
 
+var contents = fs.readFileSync("PS_ENL_RET.js")
+var dataALL = JSON.parse(contents)
+var arrayDataEnlRet = dataALL.data
+
 // =======================
 // configuration =========
 // =======================
@@ -129,6 +133,20 @@ apiRoutes.post('/enlisted_post', (req, res)=>{
     } )
 })
 
+apiRoutes.get('/enlisted_ret', (req, res)=>{
+        res.json( {
+            success: true,
+            data: arrayDataEnlRet 
+        } )
+})
+
+//API endpoint for officers submitting ranked billets
+apiRoutes.post('/enlisted_ret_post', (req, res)=>{
+    res.json( {
+        success: true,
+        data: arrayDataEnlRet
+    } )
+})
 app.use('/api', apiRoutes)
 
 // =======================
