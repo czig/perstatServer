@@ -16,9 +16,9 @@ var contents = fs.readFileSync("PS_OFF_FMT.js")
 var dataOFF = JSON.parse(contents)
 var arrayDataOFF = dataOFF.data
 
-var contents = fs.readFileSync("ps_off_promo.json")
+var contents = fs.readFileSync("ps_off_promo_pme.json")
 var dataOffPromo = JSON.parse(contents)
-var arrayDataOffPromo = dataOffPromo.data
+var arrayDataOffPromo = dataOffPromo
 
 var contents = fs.readFileSync("PS_ENL_FMT.js")
 var dataENL = JSON.parse(contents)
@@ -31,6 +31,10 @@ var arrayDataALL = dataALL.data
 var contents = fs.readFileSync("PS_ENL_RET.js")
 var dataALL = JSON.parse(contents)
 var arrayDataEnlRet = dataALL.data
+
+var contents = fs.readFileSync("ps_enlisted_promo.json")
+var dataEnlPromo = JSON.parse(contents)
+var arrayDataEnlPromo = dataEnlPromo.data
 
 // =======================
 // configuration =========
@@ -147,6 +151,15 @@ apiRoutes.post('/enlisted_ret_post', (req, res)=>{
         data: arrayDataEnlRet
     } )
 })
+
+//API endpoint for enlisted promotions 
+apiRoutes.post('/enlisted_promo_post', (req, res)=>{
+    res.json( {
+        success: true,
+        data: arrayDataEnlPromo
+    } )
+})
+
 app.use('/api', apiRoutes)
 
 // =======================
