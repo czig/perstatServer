@@ -80,6 +80,7 @@ apiRoutes.get('/', (req, res)=>{
     res.json({message: 'Welcome to the API ROOT'})
 })
 
+//API endpoint for AD Manning
 apiRoutes.get('/admanning', (req, res)=>{
     setTimeout(function() {
         res.json( {
@@ -99,6 +100,7 @@ apiRoutes.post('/adManning_post', (req, res)=>{
     } )
 })
 
+//API endpoint for officer manning
 apiRoutes.get('/officer', (req, res)=>{
     setTimeout(function() {
         res.json( {
@@ -127,6 +129,7 @@ apiRoutes.post('/officer_promo', (req, res)=>{
     } )
 })
 
+//API endpoint for enlisted manning
 apiRoutes.get('/enlisted', (req, res)=>{
         res.json( {
             success: true,
@@ -144,6 +147,7 @@ apiRoutes.post('/enlisted_post', (req, res)=>{
     } )
 })
 
+//API endpoint for enlisted retention
 apiRoutes.get('/enlisted_ret', (req, res)=>{
         res.json( {
             success: true,
@@ -165,6 +169,7 @@ apiRoutes.post('/enlisted_ret_post', (req, res)=>{
 apiRoutes.post('/enlisted_promo_post', (req, res)=>{
     res.json( {
         success: true,
+        ASOFDATE: "31-JAN-2018",
         data: arrayDataEnlPromo
     } )
 })
