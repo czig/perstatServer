@@ -80,6 +80,7 @@ apiRoutes.get('/admanning', (req, res)=>{
     setTimeout(function() {
         res.json( {
             success: true,
+            ASOFDATE: "31-JAN-2018",
             data: arrayDataALL 
         } )
     },1000)
@@ -89,6 +90,7 @@ apiRoutes.get('/admanning', (req, res)=>{
 apiRoutes.post('/adManning_post', (req, res)=>{
     res.json( {
         success: true,
+        ASOFDATE: "31-JAN-2018",
         data: arrayDataALL
     } )
 })
@@ -97,6 +99,7 @@ apiRoutes.get('/officer', (req, res)=>{
     setTimeout(function() {
         res.json( {
             success: true,
+            ASOFDATE: "31-JAN-2018",
             data: arrayDataOFF
         } )
     },2000)
@@ -106,6 +109,7 @@ apiRoutes.get('/officer', (req, res)=>{
 apiRoutes.post('/officer_post', (req, res)=>{
     res.json( {
         success: true,
+        ASOFDATE: "31-JAN-2018",
         data: arrayDataOFF
     } )
 })
@@ -114,6 +118,7 @@ apiRoutes.post('/officer_post', (req, res)=>{
 apiRoutes.post('/officer_promo', (req, res)=>{
     res.json( {
         success: true,
+        ASOFDATE: "31-JAN-2018",
         data: arrayDataOffPromo
     } )
 })
@@ -121,6 +126,7 @@ apiRoutes.post('/officer_promo', (req, res)=>{
 apiRoutes.get('/enlisted', (req, res)=>{
         res.json( {
             success: true,
+            ASOFDATE: "31-JAN-2018",
             data: arrayDataENL 
         } )
 })
@@ -129,6 +135,7 @@ apiRoutes.get('/enlisted', (req, res)=>{
 apiRoutes.post('/enlisted_post', (req, res)=>{
     res.json( {
         success: true,
+        ASOFDATE: "31-JAN-2018",
         data: arrayDataENL
     } )
 })
@@ -136,6 +143,7 @@ apiRoutes.post('/enlisted_post', (req, res)=>{
 apiRoutes.get('/enlisted_ret', (req, res)=>{
         res.json( {
             success: true,
+            asofdate: "31-JAN-2018",
             data: arrayDataEnlRet 
         } )
 })
@@ -144,6 +152,7 @@ apiRoutes.get('/enlisted_ret', (req, res)=>{
 apiRoutes.post('/enlisted_ret_post', (req, res)=>{
     res.json( {
         success: true,
+        ASOFDATE: "31-JAN-2018",
         data: arrayDataEnlRet
     } )
 })
