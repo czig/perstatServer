@@ -36,6 +36,10 @@ var contents = fs.readFileSync("ps_enlisted_promo.json")
 var dataEnlPromo = JSON.parse(contents)
 var arrayDataEnlPromo = dataEnlPromo.data
 
+var contents = fs.readFileSync("ps_civilian_inv.json")
+var dataCiv = JSON.parse(contents)
+var arrayDataCiv = dataCiv.data
+
 // =======================
 // configuration =========
 // =======================
@@ -171,6 +175,15 @@ apiRoutes.post('/enlisted_promo_post', (req, res)=>{
         success: true,
         ASOFDATE: "31-JAN-2018",
         data: arrayDataEnlPromo
+    } )
+})
+
+//API endpoint for civilian inventory 
+apiRoutes.post('/civilian_inv_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataCiv 
     } )
 })
 
