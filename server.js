@@ -40,6 +40,18 @@ var contents = fs.readFileSync("ps_civilian_inv.json")
 var dataCiv = JSON.parse(contents)
 var arrayDataCiv = dataCiv.data
 
+var contents = fs.readFileSync("Joint.js")
+var dataJoint = JSON.parse(contents)
+var arrayDataJoint = dataJoint.data
+
+var contents = fs.readFileSync("PS_OFF_TOS.js")
+var dataOffTos = JSON.parse(contents)
+var arrayDataOffTos = dataOffTos.data
+
+var contents = fs.readFileSync("PS_ENL_TOS.js")
+var dataEnlTos = JSON.parse(contents)
+var arrayDataEnlTos = dataEnlTos.data
+
 // =======================
 // configuration =========
 // =======================
@@ -184,6 +196,33 @@ apiRoutes.post('/civilian_inv_post', (req, res)=>{
         success: true,
         ASOFDATE: "31-JAN-2018",
         data: arrayDataCiv 
+    } )
+})
+
+//API endpoint for civilian inventory 
+apiRoutes.post('/joint', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataJoint 
+    } )
+})
+
+//API endpoint for off tos
+apiRoutes.post('/officer_tos', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataOffTos
+    } )
+})
+
+//API endpoint for enl tos
+apiRoutes.post('/enlisted_tos', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataEnlTos
     } )
 })
 
