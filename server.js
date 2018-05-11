@@ -52,6 +52,10 @@ var contents = fs.readFileSync("PS_ENL_TOS.js")
 var dataEnlTos = JSON.parse(contents)
 var arrayDataEnlTos = dataEnlTos.data
 
+var contents = fs.readFileSync("EFMP.js")
+var dataEFMP = JSON.parse(contents)
+var arrayDataEFMP = dataEFMP.data
+
 // =======================
 // configuration =========
 // =======================
@@ -200,7 +204,7 @@ apiRoutes.post('/civilian_inv_post', (req, res)=>{
 })
 
 //API endpoint for civilian inventory 
-apiRoutes.post('/joint', (req, res)=>{
+apiRoutes.post('/join_spouse', (req, res)=>{
     res.json( {
         success: true,
         ASOFDATE: "31-JAN-2018",
@@ -223,6 +227,14 @@ apiRoutes.post('/enlisted_tos', (req, res)=>{
         success: true,
         ASOFDATE: "31-JAN-2018",
         data: arrayDataEnlTos
+    } )
+})
+
+apiRoutes.post('/EFMP', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataEFMP
     } )
 })
 
