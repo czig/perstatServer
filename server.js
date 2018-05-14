@@ -52,6 +52,10 @@ var contents = fs.readFileSync("PS_ENL_TOS.js")
 var dataEnlTos = JSON.parse(contents)
 var arrayDataEnlTos = dataEnlTos.data
 
+var contents = fs.readFileSync("PS_STEM.js")
+var dataSTEM = JSON.parse(contents)
+var arrayDataSTEM = dataSTEM.data
+
 // =======================
 // configuration =========
 // =======================
@@ -65,7 +69,7 @@ var corsOptions = {
         if (true){//(whitelist.indexOf(origin) !== -1){
             callback(null, true)
         }
-        // whitelist-test fail
+        // whitelist-test fail@click="dynamicComponent='join'" 
         else{
             callback(new Error('Not on whitelist'))    
         }
@@ -223,6 +227,42 @@ apiRoutes.post('/enlisted_tos', (req, res)=>{
         success: true,
         ASOFDATE: "31-JAN-2018",
         data: arrayDataEnlTos
+    } )
+})
+
+//API endpoint for officer STEM
+apiRoutes.post('/officer_stem', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
+    } )
+})
+
+//API GET for endpoint officer STEM
+apiRoutes.get('/officer_stem_get', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
+    } )
+})
+
+//API endpoint for enlisted STEM
+apiRoutes.post('/enlisted_stem', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
+    } )
+})
+
+//API GET for endpoint enlisted STEM
+apiRoutes.get('/enlisted_stem_get', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
     } )
 })
 
