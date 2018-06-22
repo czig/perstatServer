@@ -52,6 +52,16 @@ var contents = fs.readFileSync("PS_ENL_TOS.js")
 var dataEnlTos = JSON.parse(contents)
 var arrayDataEnlTos = dataEnlTos.data
 
+
+var contents = fs.readFileSync("EFMP.js")
+var dataEFMP = JSON.parse(contents)
+var arrayDataEFMP = dataEFMP.data
+
+var contents = fs.readFileSync("PS_STEM.js")
+var dataSTEM = JSON.parse(contents)
+var arrayDataSTEM = dataSTEM.data
+
+
 // =======================
 // configuration =========
 // =======================
@@ -65,7 +75,7 @@ var corsOptions = {
         if (true){//(whitelist.indexOf(origin) !== -1){
             callback(null, true)
         }
-        // whitelist-test fail
+        // whitelist-test fail@click="dynamicComponent='join'" 
         else{
             callback(new Error('Not on whitelist'))    
         }
@@ -200,7 +210,7 @@ apiRoutes.post('/civilian_inv_post', (req, res)=>{
 })
 
 //API endpoint for civilian inventory 
-apiRoutes.post('/joint', (req, res)=>{
+apiRoutes.post('/join_spouse', (req, res)=>{
     res.json( {
         success: true,
         ASOFDATE: "31-JAN-2018",
@@ -223,6 +233,50 @@ apiRoutes.post('/enlisted_tos', (req, res)=>{
         success: true,
         ASOFDATE: "31-JAN-2018",
         data: arrayDataEnlTos
+    } )
+})
+
+
+apiRoutes.post('/EFMP', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataEFMP
+    } )
+})
+//API endpoint for officer STEM
+apiRoutes.post('/officer_stem', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
+    } )
+})
+
+//API GET for endpoint officer STEM
+apiRoutes.get('/officer_stem_get', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
+    } )
+})
+
+//API endpoint for enlisted STEM
+apiRoutes.post('/enlisted_stem', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
+    } )
+})
+
+//API GET for endpoint enlisted STEM
+apiRoutes.get('/enlisted_stem_get', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataSTEM
     } )
 })
 
