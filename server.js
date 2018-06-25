@@ -24,9 +24,17 @@ var contents = fs.readFileSync("PS_ENL_FMT.js")
 var dataENL = JSON.parse(contents)
 var arrayDataENL = dataENL.data
 
-var contents = fs.readFileSync("PS_ALL_FMT.js")
+var contents = fs.readFileSync("ps_off_enl_ad.js")
 var dataALL = JSON.parse(contents)
 var arrayDataALL = dataALL.data
+
+var contents = fs.readFileSync("ps_off_enl_ang.js")
+var dataANG = JSON.parse(contents)
+var arrayDataANG = dataANG.data
+
+var contents = fs.readFileSync("ps_off_enl_ar.js")
+var dataAFR = JSON.parse(contents)
+var arrayDataAFR = dataAFR.data
 
 var contents = fs.readFileSync("PS_ENL_RET.js")
 var dataALL = JSON.parse(contents)
@@ -61,6 +69,13 @@ var contents = fs.readFileSync("PS_STEM.js")
 var dataSTEM = JSON.parse(contents)
 var arrayDataSTEM = dataSTEM.data
 
+var contents = fs.readFileSync("ps_high_ed_level.js")
+var dataHighEdLevel = JSON.parse(contents)
+var arrayDataHighEdLevel = dataHighEdLevel.data
+
+var contents = fs.readFileSync("ps_prom_year_group.js")
+var dataYRGP = JSON.parse(contents)
+var arrayDataYRGP = dataYRGP.data
 
 // =======================
 // configuration =========
@@ -123,6 +138,44 @@ apiRoutes.post('/adManning_post', (req, res)=>{
         success: true,
         ASOFDATE: "31-JAN-2018",
         data: arrayDataALL
+    } )
+})
+
+//API endpoint for ANG Manning
+apiRoutes.get('/angmanning', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataANG
+        } )
+    },1000)
+})
+
+apiRoutes.post('/angmanning_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataANG
+    } )
+})
+
+//API endpoint for AFR Manning
+apiRoutes.get('/afrmanning', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataAFR
+        } )
+    },1000)
+})
+
+apiRoutes.post('/afrmanning_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataAFR
     } )
 })
 
@@ -278,6 +331,42 @@ apiRoutes.get('/enlisted_stem_get', (req, res)=>{
         ASOFDATE: "31-JAN-2018",
         data: arrayDataSTEM
     } )
+})
+
+//API endpoint for high education level
+apiRoutes.get('/high_ed_level', (req, res)=>{
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataHighEdLevel
+        } )
+})
+
+//API POST for endpoint high education level
+apiRoutes.post('/high_ed_level_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataHighEdLevel
+    } )
+})
+
+//API endpoint for ed prom year group
+apiRoutes.get('/ed_prom_year', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataYRGP
+    } )
+})
+
+//API POST for endpoint ed prom year group
+apiRoutes.post('/ed_prom_year_post', (req, res)=>{
+res.json( {
+    success: true,
+    ASOFDATE: "31-JAN-2018",
+    data: arrayDataYRGP
+} )
 })
 
 app.use('/api', apiRoutes)
