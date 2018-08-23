@@ -12,7 +12,7 @@ var morgan      = require('morgan')
 var cors        = require('cors')
 
 // load data
-var contents = fs.readFileSync("PS_OFF_FMT.js")
+var contents = fs.readFileSync("PS_OFF.js")
 var dataOFF = JSON.parse(contents)
 var arrayDataOFF = dataOFF.data
 
