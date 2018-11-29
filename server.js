@@ -16,7 +16,7 @@ var contents = fs.readFileSync("PS_OFF.js")
 var dataOFF = JSON.parse(contents)
 var arrayDataOFF = dataOFF.data
 
-var contents = fs.readFileSync("ps_off_promo_pme.json")
+var contents = fs.readFileSync("ps_off_promo.json")
 var dataOffPromo = JSON.parse(contents)
 var arrayDataOffPromo = dataOffPromo
 
