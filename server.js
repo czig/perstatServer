@@ -18,7 +18,7 @@ var arrayDataOFF = dataOFF.data
 
 var contents = fs.readFileSync("ps_off_promo.json")
 var dataOffPromo = JSON.parse(contents)
-var arrayDataOffPromo = dataOffPromo
+var arrayDataOffPromo = dataOffPromo.data
 
 var contents = fs.readFileSync("PS_ENL_FMT.js")
 var dataENL = JSON.parse(contents)
