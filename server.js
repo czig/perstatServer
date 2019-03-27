@@ -60,7 +60,6 @@ var contents = fs.readFileSync("PS_ENL_TOS.js")
 var dataEnlTos = JSON.parse(contents)
 var arrayDataEnlTos = dataEnlTos.data
 
-
 var contents = fs.readFileSync("EFMP.js")
 var dataEFMP = JSON.parse(contents)
 var arrayDataEFMP = dataEFMP.data
@@ -76,6 +75,30 @@ var arrayDataHighEdLevel = dataHighEdLevel.data
 var contents = fs.readFileSync("ps_prom_year_group.js")
 var dataYRGP = JSON.parse(contents)
 var arrayDataYRGP = dataYRGP.data
+
+var contents = fs.readFileSync("ps_high_ed_level_ang.js")
+var dataHighEdLevelANG = JSON.parse(contents)
+var arrayDataHighEdLevelANG = dataHighEdLevelANG.data
+
+var contents = fs.readFileSync("PS_OFF_ANG.js")
+var dataOFFANG = JSON.parse(contents)
+var arrayDataOFFANG = dataOFFANG.data
+
+var contents = fs.readFileSync("PS_ENL_ANG.js")
+var dataENLANG = JSON.parse(contents)
+var arrayDataENLANG = dataENLANG.data
+
+var contents = fs.readFileSync("ps_officer_promo_ang.js")
+var dataOffANGPromo = JSON.parse(contents)
+var arrayDataOffANGPromo = dataOffANGPromo.data
+
+var contents = fs.readFileSync("ps_enlisted_promo_ang.js")
+var dataEnlANGPromo = JSON.parse(contents)
+var arrayDataEnlANGPromo = dataEnlANGPromo.data
+
+var contents = fs.readFileSync("ps_enl_ret_ang.js")
+var dataEnlRetANG = JSON.parse(contents)
+var arrayDataEnlRetANG = dataEnlRetANG.data
 
 // =======================
 // configuration =========
@@ -367,6 +390,161 @@ res.json( {
     ASOFDATE: "31-JAN-2018",
     data: arrayDataYRGP
 } )
+})
+
+
+//API endpoint for ang enlisted manning
+apiRoutes.get('/ang_enlisted', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataENL 
+    } )
+})
+
+//API endpoint for ang enlisted submitting ranked billets
+apiRoutes.post('/ang_enlisted_post', (req, res)=>{
+res.json( {
+    success: true,
+    ASOFDATE: "31-JAN-2018",
+    data: arrayDataENL
+} )
+})
+
+//API endpoint for ang tos
+apiRoutes.get('/ang_tos', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataENL 
+    } )
+})
+
+//API endpoint for ang tos submitting ranked billets
+apiRoutes.post('/ang_tos_post', (req, res)=>{
+res.json( {
+    success: true,
+    ASOFDATE: "31-JAN-2018",
+    data: arrayDataENL
+} )
+})
+
+//API endpoint for high education level for ANG
+apiRoutes.get('/high_ed_level_ang', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataHighEdLevelANG
+    } )
+})
+
+//API POST for endpoint high education level for ANG
+apiRoutes.post('/high_ed_level_ang_post', (req, res)=>{
+res.json( {
+    success: true,
+    ASOFDATE: "31-JAN-2018",
+    data: arrayDataHighEdLevelANG
+} )
+})
+
+//API endpoint for ANG officer manning
+apiRoutes.get('/officer_ang', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataOFFANG
+        } )
+    },2000)
+})
+
+//API endpoint for ANG officer manning 
+apiRoutes.post('/officer_ang_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataOFFANG
+    } )
+})
+
+//API endpoint for ANG enlisted manning
+apiRoutes.get('/enlisted_ang', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataENLANG
+        } )
+    },2000)
+})
+
+//API endpoint for ANG enlisted manning 
+apiRoutes.post('/enlisted_ang_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataENLANG
+    } )
+})
+
+//API endpoint for ANG officer promotions
+apiRoutes.get('/officer_promo_ang', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataOffANGPromo
+        } )
+    },2000)
+})
+
+//API endpoint for ANG officer promotions
+apiRoutes.post('/officer_promo_ang_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataOffANGPromo
+    } )
+})
+
+//API endpoint for ANG enlisted promotions
+apiRoutes.get('/enlisted_promo_ang', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataEnlANGPromo
+        } )
+    },2000)
+})
+
+//API endpoint for ANG enlisted promotions
+apiRoutes.post('/enlisted_promo_ang_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataEnlANGPromo
+    } )
+})
+
+//API endpoint for ANG enlisted retention
+apiRoutes.get('/enlisted_ret_ang', (req, res)=>{
+    setTimeout(function() {
+        res.json( {
+            success: true,
+            ASOFDATE: "31-JAN-2018",
+            data: arrayDataEnlRetANG
+        } )
+    },2000)
+})
+
+//API endpoint for ANG enlisted retention
+apiRoutes.post('/enlisted_ret_ang_post', (req, res)=>{
+    res.json( {
+        success: true,
+        ASOFDATE: "31-JAN-2018",
+        data: arrayDataEnlRetANG
+    } )
 })
 
 app.use('/api', apiRoutes)
